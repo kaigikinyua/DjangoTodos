@@ -2,7 +2,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views import View
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required
 #forms,models etc imports
 from todos.forms import SignUpForm,LoginForm
 # Create your views here.
@@ -17,9 +18,10 @@ class Login(View):
         l=LoginForm(request.POST)
         if(l.is_valid()):
             user=l.cleaned_data
-            print(user['email'])
-            print(authenticate(request,email=user['email'],password=user['password']))
-            if(authenticate(email=user['email'],password=user['password'])!=None):
+            print(user['username'])
+            user=authenticate(username=user['username'],password=user['password'])
+            if(user!=None):
+                login(request,user,)
                 response=redirect('/userpage')
             else:
                 response=render(request,"login.html",{"error":"Wrong email or password"})
@@ -41,6 +43,9 @@ class SignUp(View):
                 response=render(request,"signup.html",{"error":"Email is already in use"})
             except:
                 u=User(username=userdata['username'],email=userdata['email'],password=userdata['password'])
+                #u.save()
+                #user=s.save(commit=False)
+                u.set_password(userdata['password'])
                 u.save()
                 response=redirect('/login')
         else:
@@ -49,14 +54,19 @@ class SignUp(View):
             elif(s.pass_match()!=True):
                 response=render(request,"signup.html",{"error":"Passwords do not match"})
         return response
-
+#@login_required
 def userpage(request):
-    userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
-    return render(request,"userpage.html",{"userdata":userdata})
+    if not request.user.is_authenticated:
+        return redirect('/login')
+    else:
+        userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
+        return render(request,"userpage.html",{"userdata":userdata})
 
 class Todos(View):
+    @login_required
     def get(self,request,operation,todoid):
         return render(request,"todo.html")
+    @login_required
     def post(self,request,operation,todoid):
         return render(request,"todo.html")
 

@@ -1,10 +1,13 @@
 from django import forms
-
+from django.contrib.auth.models import User
 class LoginForm(forms.Form):
-    email=forms.EmailField(required=True)
+    username=forms.CharField(required=True)
     password=forms.CharField(required=True)
 
 class SignUpForm(forms.Form):
+    class Meta:
+        model=User
+        
     username=forms.CharField(required=True)
     email=forms.EmailField(required=True)
     password=forms.CharField(required=True)
