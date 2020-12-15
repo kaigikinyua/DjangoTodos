@@ -9,7 +9,7 @@ div.landing{
     box-shadow: 1px 1px 20px 20px rgba(10,10,10,0.1);
 }
 div.card_image{
-    background:crimson;
+    background:lighten(lightseagreen,50%);
 }
 div.card_text{
     background: lightseagreen;
@@ -21,9 +21,10 @@ div.card_text{
     background:white;
     
     h1{
-        font-size: 3em;
+        font-size: 3.5em;
         font-weight: lighter;
-        letter-spacing: 0.3em;
+        letter-spacing: 0.2em;
+        color:darken(lightseagreen,10%);
     }
     p{
         font-size: 1.2em;

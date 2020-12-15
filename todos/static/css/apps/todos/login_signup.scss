@@ -1,0 +1,49 @@
+section.application{
+    background:lighten(lightseagreen,50%);
+}
+div.form_container{
+    background: white;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:10px;
+    max-width: 50%;
+    text-align: center;
+}
+.center{
+    justify-content: center;
+    text-align: center;
+}
+.fields{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+}
+input{
+    padding:10px;
+    border:1px solid transparent;
+    border-bottom:1px solid lightseagreen;
+    background:transparent;
+    outline:lightseagreen;
+    transition:0.5s;
+    margin:10px 0px;
+}
+input::placeholder{
+    color:darken(lightseagreen,20%);
+}
+input:hover{
+    background:lighten(lightseagreen,40%);
+}
+.submit{
+    background:lightseagreen;
+    color:white;
+}
+.title{
+    color:darken(lightseagreen,10%);
+    font-weight: lighter;
+}

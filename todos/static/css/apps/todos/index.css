@@ -15,7 +15,7 @@ div.landing {
 }
 
 div.card_image {
-  background: crimson;
+  background: #d9f8f6;
 }
 
 div.card_text {
@@ -37,9 +37,10 @@ div.card_text {
 }
 
 div.card_text h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: lighter;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
+  color: #188781;
 }
 
 div.card_text p {
