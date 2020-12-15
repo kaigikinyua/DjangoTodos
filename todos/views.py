@@ -5,22 +5,22 @@ def index(request):
     return render(request,"index.html")
 
 class Login(View):
-    def get(request):
+    def get(self,request):
         return render(request,"login.html")
-    def post(request):
+    def post(self,request):
         return render(request,"login.html")
 
 class SignUp(View):
-    def get(request):
+    def get(self,request):
         return render(request,"signup.html")
-    def post(request):
+    def post(self,request):
         return render(request,"signup.html")
 
 def userpage(request):
     return render(request,"userpage.html")
 
-class Todo(View):
-    def get(request,operation,todoid):
+class Todos(View):
+    def get(self,request,operation,todoid):
         return render(request,"todo.html")
-    def post(request,operation,todoid):
+    def post(self,request,operation,todoid):
         return render(request,"todo.html")

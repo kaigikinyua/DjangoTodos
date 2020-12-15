@@ -1,6 +1,7 @@
 {% extends './base.html' %}
-
-{% block css %}
+{% load static %}
+{% block csslinks %}
+    <link rel="stylesheet" href="{% static 'css/apps/todos/index.css' %}"/>
 {% endblock csslinks %}
 
 {% block barner_title %}
@@ -9,14 +10,24 @@
 
 {% block links %}
     <a href="#"><li class="active">Home</li></a>
-    <a href="{% url 'login' %}"><li>Login</li></a>
-    <a href="{% url 'signup' %}"><li>SignUp</li></a>
+    <a href="/login"><li>Login</li></a>
+    <a href="/signup"><li>SignUp</li></a>
 
 {% endblock links %}
 
 
 {% block application %}
-
-
+    <section class="application">
+        <div class="landing">
+            <div class="card_image"></div>
+            <div class="card_text">
+                <h1>Getting you organized</h1>
+                <p>Create your todo list, do them, cross them out and see your performance analysis!</p>
+                <div class="center">
+                    <button class="round call_to_action">Login</button>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock application %}
 

@@ -1,0 +1,56 @@
+div.landing {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 80%;
+  height: 70%;
+  -webkit-box-shadow: 1px 1px 20px 20px rgba(10, 10, 10, 0.1);
+          box-shadow: 1px 1px 20px 20px rgba(10, 10, 10, 0.1);
+}
+
+div.card_image {
+  background: crimson;
+}
+
+div.card_text {
+  background: lightseagreen;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  background: white;
+}
+
+div.card_text h1 {
+  font-size: 3em;
+  font-weight: lighter;
+  letter-spacing: 0.3em;
+}
+
+div.card_text p {
+  font-size: 1.2em;
+}
+
+button.call_to_action {
+  padding: 10px;
+  width: 200px;
+  background: crimson;
+  color: white;
+  font-size: 1.3em;
+}
+/*# sourceMappingURL=index.css.map */
