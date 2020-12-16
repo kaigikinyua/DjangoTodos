@@ -17,10 +17,13 @@ class SignUp(View):
         return render(request,"signup.html")
 
 def userpage(request):
-    return render(request,"userpage.html")
+    userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
+    return render(request,"userpage.html",{"userdata":userdata})
 
 class Todos(View):
     def get(self,request,operation,todoid):
         return render(request,"todo.html")
     def post(self,request,operation,todoid):
         return render(request,"todo.html")
+
+

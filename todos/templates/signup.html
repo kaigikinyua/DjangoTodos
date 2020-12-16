@@ -1,6 +1,7 @@
 {% extends './base.html' %}
-
+{% load static %}
 {% block csslinks %}
+    <link rel="stylesheet" href="{% static '/css/apps/todos/login_signup.css'%}">
 {% endblock csslinks %}
 
 {% block barner_title %}
@@ -10,13 +11,25 @@
 {% block links %}
     <a href="{% url 'index' %}"><li>Home</li></a>
     <a href="{% url 'login' %}"><li>Login</li></a>
-    <a href="#"><li>SignUp</li></a>
+    <a href="#"><li class="active">SignUp</li></a>
 
 {% endblock links %}
 
 
 {% block application %}
-
+    <div class="form_container">
+        <div class="center">
+            <form class="fields">
+                {% csrf_token %}
+                <h2 class="title">Sign Up</h2>
+                <input type="text" name="username" placeholder="Username"/>
+                <input type="text" name="email" placeholder="Email"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type="text" name="c_pass" placeholder="Password"/>
+                <button type="submit" class="round submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
 
 {% endblock application %}
 

@@ -1,22 +1,99 @@
 {% extends './base.html' %}
-
+{% load static %}
 {% block csslinks %}
+    <link rel="stylesheet" href="{% static 'css/apps/todos/userpage.css' %}"/>
 {% endblock csslinks %}
 
 {% block barner_title %}
-    Todos | {{ userdata.name }}
+    {{ userdata.name }}
 {% endblock barner_title %}
 
 {% block links %}
-    <a href="{% url 'index' %}"><li>Home</li></a>
-    <a href="{% url 'login' %}"><li>Login</li></a>
-    <a href="#"><li>SignUp</li></a>
+    <a href="#"><li>Analysis</li></a>
+    <a href="{% url 'index' %}"><li>Logout</li></a>
 
 {% endblock links %}
 
 
 {% block application %}
-
+    <div class="app_container">
+        <div class="todos_container">
+            <div class="header">Todos</div>
+            <div class="todos_tiles">
+                {% for todo in userdata.todos %}
+                    <div class="todo">
+                        <h3>{{todo.todo}}</h3>
+                        <small>12:00</small>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="schedule">
+            <div class="weekly">
+                <div class="header">Weekly Schedule</div>
+                <table>
+                    <tr class="header">
+                        <td>D</td>
+                        <td>7am</td>
+                        <td>1pm</td>
+                        <td>8pm</td>
+                        <td>12am</td>
+                    </tr>
+                    <tr>
+                        <td class="day">M</td>
+                        <td class="active"></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">T</td>
+                        <td class="active"></td>
+                        <td class="active"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">W</td>
+                        <td></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">T</td>
+                        <td></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">F</td>
+                        <td></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">S</td>
+                        <td></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="day">S</td>
+                        <td></td>
+                        <td></td>
+                        <td class="active"></td>
+                        <td></td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="add_todo"></div>
 
 {% endblock application %}
 

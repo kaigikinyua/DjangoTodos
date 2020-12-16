@@ -1,0 +1,82 @@
+div.app_container{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    margin-top:50px;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.todos_container{
+    max-width: 400px;
+    margin:5px;
+}
+div.todos_tiles{
+    height: 100%;
+    min-height: 100px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    padding:10px;
+    background: lighten(lightseagreen,50%);
+}
+div.header{
+    background:darken(lightseagreen,10%);
+    color:white;
+    padding:20px;
+}
+div.todo{
+    padding:10px;
+    background:white;
+    display: flex;
+    justify-content: space-between;
+    margin:10px 0px;
+}
+div.todo_form{
+    padding:10px;
+    background:white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 10px rgba(10,10,10,0.2);
+}
+div.schedule{
+    margin:5px;
+}
+table{
+    position: relative;
+    width:100%;
+    tr{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    tr.header{
+        td{
+            font-size: 0.7em;
+            background:whitesmoke;
+        }
+    }
+    td{
+        padding:5px;
+        margin:3px;
+        height:25px;
+        width:25px;
+        background:lightgray;
+        text-align: center;
+    }
+    td.active{
+        background:lightseagreen;
+    }
+    td.day{
+        background:lighten(lightseagreen,40%);
+    }
+}
+
+div.add_todo{
+    height:40px;
+    width:40px;
+    background: lighten(lightseagreen,20%);
+    position: fixed;
+    bottom:5em;
+    right:20em;
+    border-radius: 50%;
+    box-shadow: 1px 1px 25px 25px rgba(10,10,10,0.1);
+}
