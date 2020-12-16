@@ -19,7 +19,10 @@
 {% block application %}
     <div class="form_container">
         <div class="center">
-            <form class="fields">
+            {% if error %}
+                <div class="error">{{error}}</div>
+            {% endif %}
+            <form class="fields" method="POST">
                 {% csrf_token %}
                 <h2 class="title">Login</h2>
                 <input type="text" name="email" placeholder="email@domain.com"/>

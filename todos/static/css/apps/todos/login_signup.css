@@ -85,4 +85,16 @@ input:hover {
   color: #188781;
   font-weight: lighter;
 }
+
+div.error {
+  background: crimson;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+div.error ul {
+  list-style: none;
+}
 /*# sourceMappingURL=login_signup.css.map */

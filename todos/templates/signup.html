@@ -19,13 +19,16 @@
 {% block application %}
     <div class="form_container">
         <div class="center">
-            <form class="fields">
+            <form class="fields" method="POST">
                 {% csrf_token %}
                 <h2 class="title">Sign Up</h2>
+                {% if error %}
+                    <div class="error">{{error}}</div>
+                {% endif %}
                 <input type="text" name="username" placeholder="Username"/>
                 <input type="text" name="email" placeholder="Email"/>
                 <input type="password" name="password" placeholder="Password"/>
-                <input type="text" name="c_pass" placeholder="Password"/>
+                <input type="password" name="c_pass" placeholder="Password"/>
                 <button type="submit" class="round submit">Sign Up</button>
             </form>
         </div>

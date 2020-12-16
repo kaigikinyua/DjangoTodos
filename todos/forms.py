@@ -8,10 +8,10 @@ class SignUpForm(forms.Form):
     username=forms.CharField(required=True)
     email=forms.EmailField(required=True)
     password=forms.CharField(required=True)
-    conf_pass=forms.CharField(required=True)
+    c_pass=forms.CharField(required=True)
 
     def pass_match(self):
-        if(self.data["password"]!=self.data["conf_pass"]):
+        if(self.data["password"]!=self.data["c_pass"]):
             return False
             #raise ValidationError("Passwords do not match")
         #return self.cleaned_data
