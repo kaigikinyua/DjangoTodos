@@ -49,12 +49,10 @@ div.card_text h1 {
   font-weight: lighter;
   letter-spacing: 0.2em;
   color: #188781;
-  margin-bottom: 1.5em;
 }
 
 div.card_text p {
   font-size: 1.2em;
-  margin-bottom: 1.2em;
 }
 
 button.call_to_action {
@@ -89,6 +87,10 @@ button.call_to_action {
   }
   div.card_text h1 {
     font-size: 2em;
+    margin-bottom: 1.5em;
+  }
+  div.card_text p {
+    margin-bottom: 1.2em;
   }
 }
 /*# sourceMappingURL=index.css.map */
