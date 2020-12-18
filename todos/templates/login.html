@@ -25,7 +25,7 @@
             <form class="fields" method="POST">
                 {% csrf_token %}
                 <h2 class="title">Login</h2>
-                <input type="text" name="email" placeholder="email@domain.com"/>
+                <input type="email" name="email" placeholder="email@domain.com"/>
                 <input type="password" name="password" placeholder="Password"/>
                 <button type="submit" class="round submit">Login</button>
             </form>

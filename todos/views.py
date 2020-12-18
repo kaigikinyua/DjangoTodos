@@ -17,16 +17,20 @@ class Login(View):
         l=LoginForm(request.POST)
         if(l.is_valid()):
             user=l.cleaned_data
-            print(authenticate(username=user['email'],password=user['password']))
+            print(user['email'])
+            print(authenticate(request,email=user['email'],password=user['password']))
             if(authenticate(email=user['email'],password=user['password'])!=None):
                 response=redirect('/userpage')
             else:
                 response=render(request,"login.html",{"error":"Wrong email or password"})
+        else:
+            response=render(request,"login.html",{"error":l.errors})
         return response
 
 class SignUp(View):
     def get(self,request):
         return render(request,"signup.html")
+
     def post(self,request):
         s=SignUpForm(request.POST)
         response=None
