@@ -17,7 +17,7 @@ class Login(View):
         l=LoginForm(request.POST)
         if(l.is_valid()):
             user=l.cleaned_data
-            print(authenticate(email=user['email'],password=user['password']))
+            print(authenticate(username=user['email'],password=user['password']))
             if(authenticate(email=user['email'],password=user['password'])!=None):
                 response=redirect('/userpage')
             else:
