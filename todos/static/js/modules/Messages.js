@@ -5,3 +5,4 @@ class Messages{
     }
 
 }
+export {Messages}
