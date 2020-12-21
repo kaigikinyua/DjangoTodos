@@ -16,3 +16,4 @@ class Requests{
         .then(data=>{callback(data)})
     }
 }
+export { Requests }
