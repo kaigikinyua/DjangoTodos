@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
 #forms,models etc imports
 from todos.forms import SignUpForm,LoginForm
+from todos.models import Todo
 # Create your views here.
 def index(request):
     return render(request,"index.html")
@@ -59,6 +60,7 @@ def userpage(request):
     if not request.user.is_authenticated:
         return redirect('/login')
     else:
+        #filter users todos
         userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
         return render(request,"userpage.html",{"userdata":userdata})
 
