@@ -1,5 +1,6 @@
-from todos.models import Todo
-
+from django.utils import 
+from models import Todo
+from datetime import datetime
 class TodosCrud:
     @staticmethod
     def create_todo(useremail,todo,deadline,priority):
@@ -47,4 +48,14 @@ class TodosCrud:
             todos=False
         return todos
 
+
+if __name__=="__main__":
+    print("Testing module: TodosCrud")
+    tests={"Create":False,"Delete":False,"Update":False,"Read":False}
+    tests["Create"]=TodosCrud.create_todo("james@email.com","Build a car",datetime.today(),1,)
+    tests["Read"]=TodosCrud.fetch_todos("james@email.com")
+    tests["Update"]=TodosCrud.edit_todo("james@email.com","Build a sports car",datetime.today(),3)
+    tests["Delete"]=TodosCrud.delete_todo("james@email.com","Build a sports car")
+    for test in tests:
+        print(test)
 

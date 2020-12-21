@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 #forms,models etc imports
 from todos.forms import SignUpForm,LoginForm
 from todos.models import Todo
+from todos.modules import TodosCrud
 # Create your views here.
 def index(request):
     return render(request,"index.html")
@@ -71,5 +72,7 @@ class Todos(View):
     @login_required
     def post(self,request,operation,todoid):
         return render(request,"todo.html")
+
+
 
 
