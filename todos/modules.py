@@ -1,4 +1,4 @@
-from django.utils import 
+ 
 from models import Todo
 from datetime import datetime
 class TodosCrud:
