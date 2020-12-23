@@ -62,7 +62,9 @@ def userpage(request):
         return redirect('/login')
     else:
         #filter users todos
-        userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
+        #userdata={"name":"test user","todos":[{"todo":"Learn Django"},{"todo":"Learn Flask"},{"todo":"Learn Dart"}]}
+        #u=User.objects.get(username=request.user)
+        #userdata=TodosCrud.fetch_todos()
         return render(request,"userpage.html",{"userdata":userdata})
 
 class Todos(View):
